@@ -18,7 +18,7 @@ public class HiController {
     Hiservice hiservice;
 
     @GetMapping(value = "/hi")
-    public String sayHi(@RequestParam String name) {
+    public String sayHi(@RequestParam(value = "name",defaultValue = "feign") String name) {
         return hiservice.hi( name );
     }
 }
